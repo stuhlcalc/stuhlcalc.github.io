@@ -1,0 +1,2163 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StuhlКалькулятор — консольный калькулятор клуба Stuhl · VIP IT сообщество Московской Школы Программистов</title>
+<meta name="description" content="StuhlКалькулятор — наилучший консольный калькулятор в истории Московской Школы Программистов. Продукт клуба Stuhl внутри закрытого VIP IT сообщества МШП. Простые и расширенные операции, тригонометрия в градусах и радианах, логические операции and/or/not, перевод чисел между системами счисления (2СС, 8СС, 16СС), проверка корректности скобок, калькулятор строк и длинная арифметика. Кураторы: Годоборшев Эльберд Анзорович и Чернышков Максим Викторович.">
+<meta name="keywords" content="StuhlКалькулятор, Stuhl Calc, StuhlCalc, Stuhl Core, StuhlClub, клуб Stuhl, Stuhl Club, VIP IT сообщество, VIP IT МШП, Московская Школа Программистов, МШП, Школа Программистов, консольный калькулятор, лучший калькулятор, калькулятор чисел, калькулятор строк, длинная арифметика, системы счисления, перевод в 2СС, перевод в 8СС, перевод в 16СС, тригонометрия, sin, cos, логические операции, проверка скобок, Годоборшев Эльберд Анзорович, Чернышков Максим Викторович, Осипов Матвей, Тептин Марк, Шарикадзе Александр, Стекольников Алексей, Киселев Святослав, Давыдов Максим, Куранцев Николай, Земляков Егор, проект по программированию, python калькулятор">
+<meta name="author" content="Клуб Stuhl · VIP IT сообщество Московской Школы Программистов">
+<meta name="creator" content="Клуб Stuhl">
+<meta name="publisher" content="Клуб Stuhl · VIP IT сообщество МШП">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="theme-color" content="#0B0B0F">
+<meta name="color-scheme" content="dark">
+<meta name="application-name" content="StuhlКалькулятор">
+<meta name="apple-mobile-web-app-title" content="StuhlКалькулятор">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="geo.region" content="RU-MOW">
+<meta name="geo.placename" content="Москва">
+<meta name="language" content="Russian">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="StuhlКалькулятор">
+<meta property="og:title" content="StuhlКалькулятор — продукт клуба Stuhl · VIP IT сообщество МШП">
+<meta property="og:description" content="Наилучший консольный калькулятор: простые и расширенные операции, тригонометрия, логика, системы счисления, длинная арифметика, калькулятор строк.">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:url" content="https://stuhl.calc/">
+<meta property="og:image" content="https://stuhl.calc/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="StuhlКалькулятор — клуб Stuhl · VIP IT МШП">
+<meta name="twitter:description" content="Наилучший консольный калькулятор от клуба Stuhl.">
+<meta name="twitter:image" content="https://stuhl.calc/og-image.png">
+<link rel="canonical" href="https://stuhl.calc/">
+<link rel="alternate" hreflang="ru" href="https://stuhl.calc/">
+<link rel="alternate" hreflang="x-default" href="https://stuhl.calc/">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230B0B0F'/%3E%3Ctext x='50' y='70' font-family='Helvetica' font-size='56' font-weight='300' fill='%23C6FF3D' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://stuhl.calc/#software",
+      "name": "StuhlКалькулятор",
+      "alternateName": ["StuhlCalc", "Stuhl Calc", "Stuhl Core"],
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Web, Windows, Linux, macOS",
+      "description": "Наилучший консольный калькулятор, созданный клубом Stuhl внутри VIP IT сообщества Московской Школы Программистов.",
+      "softwareVersion": "4.2",
+      "author": {"@id": "https://stuhl.calc/#organization"},
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "RUB"},
+      "aggregateRating": {"@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "21"}
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://stuhl.calc/#organization",
+      "name": "Клуб Stuhl",
+      "description": "Элитный клуб внутри VIP IT сообщества Московской Школы Программистов.",
+      "member": [
+        {"@type": "Person", "name": "Годоборшев Эльберд Анзорович", "jobTitle": "Куратор"},
+        {"@type": "Person", "name": "Чернышков Максим Викторович", "jobTitle": "Куратор"},
+        {"@type": "Person", "name": "Осипов Матвей", "jobTitle": "Разработчик"},
+        {"@type": "Person", "name": "Тептин Марк", "jobTitle": "Разработчик"},
+        {"@type": "Person", "name": "Шарикадзе Александр", "jobTitle": "Разработчик"},
+        {"@type": "Person", "name": "Стекольников Алексей", "jobTitle": "Разработчик"},
+        {"@type": "Person", "name": "Киселев Святослав", "jobTitle": "Разработчик"},
+        {"@type": "Person", "name": "Давыдов Максим", "jobTitle": "Разработчик"},
+        {"@type": "Person", "name": "Куранцев Николай", "jobTitle": "Разработчик"},
+        {"@type": "Person", "name": "Земляков Егор", "jobTitle": "Разработчик"}
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "Что такое StuhlКалькулятор?", "acceptedAnswer": {"@type": "Answer", "text": "Консольный калькулятор клуба Stuhl внутри VIP IT сообщества МШП. Три модуля: числа, строки, длинная арифметика."}},
+        {"@type": "Question", "name": "Какие операции поддерживаются?", "acceptedAnswer": {"@type": "Answer", "text": "Арифметика, тригонометрия, логика, системы счисления, проверка скобок, работа со строками, длинная арифметика."}},
+        {"@type": "Question", "name": "Кто кураторы?", "acceptedAnswer": {"@type": "Answer", "text": "Годоборшев Эльберд Анзорович и Чернышков Максим Викторович."}},
+        {"@type": "Question", "name": "Кто в команде?", "acceptedAnswer": {"@type": "Answer", "text": "Осипов Матвей, Тептин Марк, Шарикадзе Александр, Стекольников Алексей, Киселев Святослав, Давыдов Максим, Куранцев Николай, Земляков Егор."}}
+      ]
+    }
+  ]
+}
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #0B0B0F;
+    --bg-soft: #101014;
+    --surface: #141419;
+    --line: #1E1E26;
+    --line-soft: #17171D;
+    --text: #F2F2F5;
+    --text-dim: #8A8A96;
+    --text-dimmer: #55555F;
+    --accent: #C6FF3D;
+    --accent-dim: #9BC92A;
+    --accent-glow: rgba(198,255,61,0.12);
+    --green: #5FE3A1;
+    --red: #FF5F57;
+    --ff-body: 'Inter', -apple-system, sans-serif;
+    --ff-mono: 'JetBrains Mono', 'SF Mono', monospace;
+  }
+
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--ff-body);
+    font-weight: 400;
+    line-height: 1.5;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: -0.01em;
+  }
+
+  ::selection { background: var(--accent); color: var(--bg); }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    height: 72px;
+    background: rgba(11,11,15,0.6);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border-bottom: 1px solid transparent;
+    transition: all 0.3s ease;
+  }
+  nav.scrolled {
+    border-bottom-color: var(--line);
+    background: rgba(11,11,15,0.85);
+  }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--ff-mono);
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--text);
+    text-decoration: none;
+    letter-spacing: -0.02em;
+  }
+  .nav-logo-mark {
+    width: 26px;
+    height: 26px;
+    border-radius: 7px;
+    background: var(--accent);
+    color: var(--bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.85rem;
+    font-family: var(--ff-mono);
+  }
+  .nav-logo-text em {
+    color: var(--text-dim);
+    font-style: normal;
+    font-weight: 400;
+    margin-left: 2px;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    list-style: none;
+    background: var(--line-soft);
+    border: 1px solid var(--line);
+    border-radius: 100px;
+    padding: 4px;
+  }
+  .nav-links a {
+    font-size: 0.82rem;
+    font-weight: 450;
+    color: var(--text-dim);
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 100px;
+    transition: all 0.2s ease;
+    letter-spacing: -0.005em;
+  }
+  .nav-links a:hover {
+    color: var(--text);
+    background: var(--surface);
+  }
+
+  .nav-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--ff-mono);
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--bg);
+    background: var(--accent);
+    text-decoration: none;
+    padding: 9px 16px;
+    border-radius: 100px;
+    transition: all 0.25s ease;
+    letter-spacing: -0.01em;
+  }
+  .nav-cta:hover {
+    background: var(--text);
+    transform: translateY(-1px);
+  }
+  .nav-cta-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--bg);
+    animation: pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%,100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  .burger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 10px;
+    background: transparent;
+    border: none;
+  }
+  .burger span {
+    width: 22px;
+    height: 1.5px;
+    background: var(--text);
+    border-radius: 2px;
+    transition: 0.3s;
+  }
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    top: 72px; left: 0; right: 0;
+    background: var(--bg);
+    border-bottom: 1px solid var(--line);
+    z-index: 99;
+    padding: 16px 24px 24px;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a {
+    padding: 14px 0;
+    font-size: 1rem;
+    font-weight: 450;
+    color: var(--text-dim);
+    text-decoration: none;
+    border-bottom: 1px solid var(--line);
+    transition: color 0.2s;
+  }
+  .mobile-menu a:hover { color: var(--accent); }
+  .mobile-menu a:last-child { border-bottom: none; }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 140px 40px 80px;
+    position: relative;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .hero-top {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--ff-mono);
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: var(--text-dim);
+    letter-spacing: 0.02em;
+    margin-bottom: 40px;
+    animation: fadeUp 0.8s ease both;
+  }
+  .hero-top-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 12px var(--accent);
+    animation: pulse 2s ease-in-out infinite;
+  }
+  .hero-top-sep {
+    width: 20px;
+    height: 1px;
+    background: var(--line);
+  }
+
+  .hero h1 {
+    font-size: clamp(2.8rem, 8vw, 7rem);
+    font-weight: 300;
+    line-height: 0.98;
+    letter-spacing: -0.045em;
+    margin-bottom: 40px;
+    max-width: 1200px;
+    animation: fadeUp 0.9s 0.1s ease both;
+  }
+  .hero h1 em {
+    font-style: italic;
+    font-weight: 200;
+    color: var(--text-dim);
+  }
+  .hero h1 strong {
+    font-weight: 600;
+    color: var(--accent);
+  }
+  .hero h1 .serif {
+    font-weight: 400;
+  }
+
+  .hero-bottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: end;
+    animation: fadeUp 1s 0.2s ease both;
+  }
+
+  .hero-desc {
+    font-size: 1rem;
+    color: var(--text-dim);
+    line-height: 1.7;
+    max-width: 480px;
+    font-weight: 300;
+  }
+  .hero-desc strong {
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  .btn-solid {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--accent);
+    color: var(--bg);
+    padding: 15px 26px;
+    border-radius: 100px;
+    font-size: 0.88rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    letter-spacing: -0.01em;
+  }
+  .btn-solid:hover {
+    background: var(--text);
+    transform: translateY(-2px);
+  }
+  .btn-solid .arr {
+    transition: transform 0.3s ease;
+    font-family: var(--ff-mono);
+  }
+  .btn-solid:hover .arr { transform: translateX(3px); }
+
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: transparent;
+    color: var(--text);
+    padding: 15px 26px;
+    border-radius: 100px;
+    font-size: 0.88rem;
+    font-weight: 450;
+    text-decoration: none;
+    border: 1px solid var(--line);
+    transition: all 0.25s ease;
+    letter-spacing: -0.01em;
+  }
+  .btn-ghost:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    margin-top: 100px;
+    border-top: 1px solid var(--line);
+    padding-top: 32px;
+    animation: fadeUp 1.1s 0.35s ease both;
+  }
+  .hero-stat {
+    padding-right: 40px;
+    border-right: 1px solid var(--line);
+  }
+  .hero-stat:last-child { border-right: none; }
+  .hero-stat-num {
+    font-family: var(--ff-mono);
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: var(--text);
+    letter-spacing: -0.02em;
+    line-height: 1;
+    margin-bottom: 10px;
+  }
+  .hero-stat-num em {
+    color: var(--text-dimmer);
+    font-style: normal;
+    font-size: 0.9rem;
+    margin-left: 2px;
+  }
+  .hero-stat-lbl {
+    font-family: var(--ff-mono);
+    font-size: 0.7rem;
+    font-weight: 400;
+    color: var(--text-dimmer);
+    letter-spacing: 0.02em;
+    text-transform: lowercase;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* SECTION */
+  section {
+    padding: 120px 40px;
+    position: relative;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .section-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 60px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--line);
+    flex-wrap: wrap;
+  }
+  .section-tag {
+    font-family: var(--ff-mono);
+    font-size: 0.72rem;
+    color: var(--text-dimmer);
+    letter-spacing: 0.02em;
+    font-weight: 400;
+  }
+  .section-tag em {
+    color: var(--accent);
+    font-style: normal;
+  }
+
+  h2 {
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 300;
+    letter-spacing: -0.035em;
+    line-height: 1.05;
+    margin-bottom: 16px;
+    max-width: 900px;
+  }
+  h2 em {
+    font-style: italic;
+    font-weight: 200;
+    color: var(--text-dim);
+  }
+  h2 strong {
+    font-weight: 600;
+    color: var(--accent);
+  }
+
+  .section-sub {
+    color: var(--text-dim);
+    font-size: 0.95rem;
+    font-weight: 300;
+    max-width: 620px;
+    line-height: 1.7;
+  }
+
+  /* CALC */
+  .calc-shell {
+    background: var(--bg-soft);
+    border-radius: 16px;
+    border: 1px solid var(--line);
+    overflow: hidden;
+    margin-top: 40px;
+    position: relative;
+  }
+  .calc-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--line);
+    background: var(--bg);
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .calc-bar-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .calc-dots {
+    display: flex;
+    gap: 6px;
+  }
+  .calc-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--line);
+  }
+  .calc-dot:nth-child(1) { background: #3A3A42; }
+  .calc-dot:nth-child(2) { background: #3A3A42; }
+  .calc-dot:nth-child(3) { background: #3A3A42; }
+  .calc-title {
+    font-family: var(--ff-mono);
+    font-size: 0.75rem;
+    color: var(--text-dimmer);
+    font-weight: 400;
+  }
+  .calc-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--ff-mono);
+    font-size: 0.7rem;
+    color: var(--accent);
+    font-weight: 400;
+  }
+  .calc-status-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 8px var(--accent);
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  .calc-body {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    min-height: 560px;
+  }
+
+  .calc-console {
+    padding: 24px 28px;
+    font-family: var(--ff-mono);
+    font-size: 0.82rem;
+    line-height: 1.75;
+    overflow-y: auto;
+    max-height: 700px;
+    min-height: 560px;
+    background: var(--bg-soft);
+    font-weight: 400;
+  }
+  .calc-console::-webkit-scrollbar { width: 6px; }
+  .calc-console::-webkit-scrollbar-track { background: transparent; }
+  .calc-console::-webkit-scrollbar-thumb {
+    background: var(--line);
+    border-radius: 3px;
+  }
+  .calc-console::-webkit-scrollbar-thumb:hover { background: #2A2A34; }
+
+  .console-line {
+    display: block;
+    white-space: pre-wrap;
+    word-break: break-word;
+    margin-bottom: 2px;
+    color: var(--text-dim);
+    font-weight: 400;
+  }
+  .console-line .cl-accent { color: var(--accent); }
+  .console-line .cl-ok { color: var(--green); }
+  .console-line .cl-err { color: var(--red); }
+  .console-line .cl-dim { color: var(--text-dimmer); }
+  .console-line .cl-white { color: var(--text); }
+  .console-line .cl-prompt { color: var(--accent); }
+
+  .calc-input-wrap {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 0 4px;
+    margin-top: 12px;
+    border-top: 1px solid var(--line);
+  }
+  .calc-input-prompt {
+    font-family: var(--ff-mono);
+    font-size: 0.82rem;
+    color: var(--accent);
+    font-weight: 400;
+    flex-shrink: 0;
+  }
+  .calc-input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-family: var(--ff-mono);
+    font-size: 0.82rem;
+    color: var(--text);
+    caret-color: var(--accent);
+    font-weight: 400;
+  }
+  .calc-input::placeholder { color: var(--text-dimmer); }
+
+  .calc-side {
+    background: var(--bg);
+    border-left: 1px solid var(--line);
+    padding: 24px 20px;
+    overflow-y: auto;
+    max-height: 700px;
+  }
+  .calc-side::-webkit-scrollbar { width: 4px; }
+  .calc-side::-webkit-scrollbar-thumb {
+    background: var(--line);
+    border-radius: 2px;
+  }
+
+  .calc-side-group { margin-bottom: 28px; }
+  .calc-side-group:last-child { margin-bottom: 0; }
+  .calc-side-label {
+    font-family: var(--ff-mono);
+    font-size: 0.65rem;
+    color: var(--text-dimmer);
+    letter-spacing: 0.04em;
+    margin-bottom: 12px;
+    text-transform: lowercase;
+  }
+
+  .cmd-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    text-align: left;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    padding: 8px 10px;
+    font-family: var(--ff-mono);
+    font-size: 0.74rem;
+    font-weight: 400;
+    color: var(--text-dim);
+    cursor: pointer;
+    transition: all 0.15s ease;
+    margin-bottom: 2px;
+  }
+  .cmd-btn:hover {
+    background: var(--surface);
+    color: var(--text);
+    border-color: var(--line);
+  }
+  .cmd-btn .cmd-bullet {
+    color: var(--text-dimmer);
+    font-size: 0.7rem;
+    flex-shrink: 0;
+  }
+  .cmd-btn:hover .cmd-bullet { color: var(--accent); }
+
+  /* DOCS */
+  .docs-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border-top: 1px solid var(--line);
+  }
+  .doc-item {
+    padding: 40px 32px 40px 0;
+    border-right: 1px solid var(--line);
+    transition: all 0.3s ease;
+    cursor: default;
+  }
+  .doc-item:last-child { border-right: none; padding-right: 0; }
+  .doc-item:not(:first-child) { padding-left: 32px; }
+  .doc-item-num {
+    font-family: var(--ff-mono);
+    font-size: 0.7rem;
+    color: var(--text-dimmer);
+    margin-bottom: 24px;
+    letter-spacing: 0.04em;
+  }
+  .doc-item h3 {
+    font-size: 1.15rem;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    margin-bottom: 12px;
+    color: var(--text);
+  }
+  .doc-item p {
+    font-size: 0.88rem;
+    color: var(--text-dim);
+    line-height: 1.7;
+    font-weight: 300;
+    margin-bottom: 16px;
+  }
+  .doc-item code {
+    font-family: var(--ff-mono);
+    font-size: 0.75rem;
+    color: var(--accent);
+    background: rgba(198,255,61,0.06);
+    padding: 3px 8px;
+    border-radius: 5px;
+    border: 1px solid rgba(198,255,61,0.12);
+  }
+
+  .doc-details {
+    margin-top: 60px;
+    border-top: 1px solid var(--line);
+  }
+  .doc-detail {
+    border-bottom: 1px solid var(--line);
+    padding: 28px 0;
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 40px;
+    transition: all 0.2s ease;
+  }
+  .doc-detail:hover {
+    padding-left: 12px;
+  }
+  .doc-detail-tag {
+    font-family: var(--ff-mono);
+    font-size: 0.72rem;
+    color: var(--text-dimmer);
+    letter-spacing: 0.02em;
+    padding-top: 4px;
+  }
+  .doc-detail-content h4 {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 8px;
+    letter-spacing: -0.015em;
+  }
+  .doc-detail-content p {
+    font-size: 0.87rem;
+    color: var(--text-dim);
+    line-height: 1.7;
+    font-weight: 300;
+  }
+  .doc-detail-content code {
+    font-family: var(--ff-mono);
+    font-size: 0.78rem;
+    color: var(--accent);
+    background: rgba(198,255,61,0.06);
+    padding: 2px 6px;
+    border-radius: 4px;
+  }
+
+  /* CLUB */
+  .club-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border-top: 1px solid var(--line);
+  }
+  .club-item {
+    padding: 48px 32px 48px 0;
+    border-right: 1px solid var(--line);
+    transition: all 0.3s ease;
+  }
+  .club-item:last-child { border-right: none; padding-right: 0; }
+  .club-item:not(:first-child) { padding-left: 32px; }
+  .club-item-num {
+    font-family: var(--ff-mono);
+    font-size: 0.7rem;
+    color: var(--accent);
+    margin-bottom: 20px;
+    letter-spacing: 0.04em;
+  }
+  .club-item h3 {
+    font-size: 1.15rem;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    margin-bottom: 14px;
+    color: var(--text);
+  }
+  .club-item p {
+    font-size: 0.88rem;
+    color: var(--text-dim);
+    line-height: 1.7;
+    font-weight: 300;
+    margin-bottom: 20px;
+  }
+  .club-item ul {
+    list-style: none;
+  }
+  .club-item ul li {
+    font-family: var(--ff-mono);
+    font-size: 0.76rem;
+    color: var(--text-dimmer);
+    padding: 8px 0;
+    border-bottom: 1px solid var(--line-soft);
+    display: flex;
+    gap: 12px;
+  }
+  .club-item ul li::before {
+    content: '—';
+    color: var(--text-dimmer);
+    flex-shrink: 0;
+  }
+  .club-item ul li:last-child { border-bottom: none; }
+
+  /* SPECS */
+  .spec-list {
+    border-top: 1px solid var(--line);
+  }
+  .spec-row {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 40px;
+    padding: 24px 0;
+    border-bottom: 1px solid var(--line);
+    transition: padding 0.2s ease;
+  }
+  .spec-row:hover { padding-left: 12px; }
+  .spec-row-key {
+    font-family: var(--ff-mono);
+    font-size: 0.75rem;
+    color: var(--text-dimmer);
+    letter-spacing: 0.02em;
+    padding-top: 3px;
+  }
+  .spec-row-val {
+    font-size: 0.95rem;
+    color: var(--text-dim);
+    line-height: 1.6;
+    font-weight: 300;
+  }
+  .spec-row-val strong {
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  /* MANIFEST */
+  .manifest {
+    padding: 80px 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .manifest-label {
+    font-family: var(--ff-mono);
+    font-size: 0.72rem;
+    color: var(--text-dimmer);
+    margin-bottom: 32px;
+    letter-spacing: 0.02em;
+  }
+  .manifest-text {
+    font-size: clamp(1.3rem, 2.4vw, 1.7rem);
+    font-weight: 300;
+    line-height: 1.45;
+    letter-spacing: -0.025em;
+    color: var(--text-dim);
+    max-width: 1000px;
+  }
+  .manifest-text strong { color: var(--text); font-weight: 500; }
+  .manifest-text em {
+    font-style: italic;
+    font-weight: 300;
+    color: var(--accent);
+  }
+  .manifest-sign {
+    margin-top: 48px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .manifest-sign-line {
+    width: 40px;
+    height: 1px;
+    background: var(--accent);
+  }
+  .manifest-sign-text {
+    font-family: var(--ff-mono);
+    font-size: 0.75rem;
+    color: var(--text-dimmer);
+    letter-spacing: 0.02em;
+  }
+
+  /* TEAM */
+  .team-label {
+    font-family: var(--ff-mono);
+    font-size: 0.72rem;
+    color: var(--text-dimmer);
+    margin: 48px 0 20px;
+    letter-spacing: 0.02em;
+  }
+  .team-label:first-of-type { margin-top: 0; }
+
+  .curators-list {
+    border-top: 1px solid var(--line);
+  }
+  .curator-row {
+    display: grid;
+    grid-template-columns: 60px 1fr auto;
+    gap: 24px;
+    align-items: center;
+    padding: 24px 0;
+    border-bottom: 1px solid var(--line);
+    transition: padding 0.25s ease;
+    text-decoration: none;
+    color: inherit;
+  }
+  .curator-row:hover { padding-left: 12px; }
+  .curator-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--ff-mono);
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--text-dim);
+    transition: all 0.3s ease;
+  }
+  .curator-row:hover .curator-avatar {
+    background: var(--accent);
+    color: var(--bg);
+    border-color: var(--accent);
+  }
+  .curator-name {
+    font-size: 1rem;
+    font-weight: 450;
+    color: var(--text);
+    letter-spacing: -0.015em;
+  }
+  .curator-role {
+    font-family: var(--ff-mono);
+    font-size: 0.72rem;
+    color: var(--text-dimmer);
+    text-align: right;
+    letter-spacing: 0.02em;
+  }
+
+  .team-list {
+    border-top: 1px solid var(--line);
+  }
+  .team-row {
+    display: grid;
+    grid-template-columns: 60px 1fr auto;
+    gap: 24px;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--line);
+    transition: padding 0.25s ease;
+  }
+  .team-row:hover { padding-left: 12px; }
+  .team-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--ff-mono);
+    font-size: 0.74rem;
+    font-weight: 500;
+    color: var(--text-dim);
+    transition: all 0.3s ease;
+  }
+  .team-row:hover .team-avatar {
+    background: var(--accent);
+    color: var(--bg);
+    border-color: var(--accent);
+  }
+  .team-name {
+    font-size: 0.95rem;
+    font-weight: 450;
+    color: var(--text);
+    letter-spacing: -0.015em;
+  }
+  .team-role {
+    font-family: var(--ff-mono);
+    font-size: 0.72rem;
+    color: var(--text-dimmer);
+    letter-spacing: 0.02em;
+  }
+
+  /* MARQUEE */
+  .marquee {
+    padding: 32px 0;
+    overflow: hidden;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    gap: 0;
+  }
+  .marquee-track {
+    display: flex;
+    gap: 48px;
+    animation: scroll 50s linear infinite;
+    white-space: nowrap;
+    padding-right: 48px;
+  }
+  .marquee-item {
+    font-family: var(--ff-mono);
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: var(--text-dimmer);
+    letter-spacing: 0.04em;
+    display: flex;
+    align-items: center;
+    gap: 48px;
+    text-transform: lowercase;
+  }
+  .marquee-item::after {
+    content: '·';
+    color: var(--accent);
+    font-size: 1.2rem;
+  }
+  @keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  /* FOOTER */
+  footer {
+    padding: 80px 40px 40px;
+    border-top: 1px solid var(--line);
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 60px;
+    margin-bottom: 80px;
+  }
+  .footer-brand p {
+    font-size: 0.85rem;
+    color: var(--text-dim);
+    line-height: 1.7;
+    font-weight: 300;
+    max-width: 320px;
+    margin-top: 20px;
+  }
+  .footer-brand .nav-logo { font-size: 0.95rem; }
+  .footer-col h4 {
+    font-family: var(--ff-mono);
+    font-size: 0.7rem;
+    font-weight: 400;
+    color: var(--text-dimmer);
+    letter-spacing: 0.04em;
+    text-transform: lowercase;
+    margin-bottom: 20px;
+  }
+  .footer-col a {
+    display: block;
+    font-size: 0.86rem;
+    color: var(--text-dim);
+    text-decoration: none;
+    margin-bottom: 12px;
+    transition: color 0.2s ease;
+    font-weight: 300;
+  }
+  .footer-col a:hover { color: var(--accent); }
+
+  .footer-bottom {
+    padding-top: 32px;
+    border-top: 1px solid var(--line);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .footer-bottom p {
+    font-family: var(--ff-mono);
+    font-size: 0.72rem;
+    color: var(--text-dimmer);
+    letter-spacing: 0.02em;
+  }
+  .footer-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--ff-mono);
+    font-size: 0.7rem;
+    color: var(--accent);
+    letter-spacing: 0.02em;
+  }
+  .footer-badge-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--accent);
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  /* REVEAL */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  @media (max-width: 1000px) {
+    .calc-body { grid-template-columns: 1fr; }
+    .calc-side {
+      border-left: none;
+      border-top: 1px solid var(--line);
+      max-height: none;
+    }
+    .calc-console { min-height: 400px; max-height: 500px; }
+    .hero-bottom { grid-template-columns: 1fr; gap: 32px; }
+    .hero-actions { justify-content: flex-start; }
+    .hero-stats { grid-template-columns: repeat(2, 1fr); gap: 32px 0; }
+    .hero-stat:nth-child(2) { border-right: none; }
+    .hero-stat:nth-child(3) { border-right: 1px solid var(--line); }
+    .hero-stat:nth-child(3), .hero-stat:nth-child(4) { padding-top: 24px; border-top: 1px solid var(--line); }
+  }
+
+  @media (max-width: 900px) {
+    .docs-row { grid-template-columns: 1fr; }
+    .doc-item { border-right: none; border-bottom: 1px solid var(--line); padding: 32px 0; }
+    .doc-item:not(:first-child) { padding-left: 0; }
+    .doc-item:last-child { border-bottom: none; }
+    .club-grid { grid-template-columns: 1fr; }
+    .club-item { border-right: none; border-bottom: 1px solid var(--line); padding: 32px 0; }
+    .club-item:not(:first-child) { padding-left: 0; }
+    .club-item:last-child { border-bottom: none; }
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+    .nav-links { display: none; }
+    .burger { display: flex; }
+    .doc-detail, .spec-row { grid-template-columns: 1fr; gap: 8px; }
+    .curator-row, .team-row { grid-template-columns: 48px 1fr; gap: 16px; }
+    .curator-role, .team-role { grid-column: 2; text-align: left; margin-top: 4px; }
+  }
+
+  @media (max-width: 600px) {
+    nav { padding: 0 20px; height: 64px; }
+    .mobile-menu { top: 64px; }
+    .hero { padding: 100px 20px 60px; }
+    section { padding: 80px 20px; }
+    footer { padding: 60px 20px 32px; }
+    .hero h1 { font-size: 2.4rem; }
+    .hero-stats { grid-template-columns: 1fr 1fr; margin-top: 60px; }
+    .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+    .calc-console { padding: 16px 14px; font-size: 0.74rem; }
+    .footer-bottom { flex-direction: column; text-align: center; }
+    .nav-cta { padding: 8px 14px; font-size: 0.74rem; }
+    .hero-top { font-size: 0.7rem; }
+    .manifest { padding: 60px 0; }
+  }
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="#top" class="nav-logo">
+    <div class="nav-logo-mark">S</div>
+    <div class="nav-logo-text">stuhl<em>calc</em></div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#calc">калькулятор</a></li>
+    <li><a href="#docs">докс</a></li>
+    <li><a href="#specs">ядро</a></li>
+    <li><a href="#club">клуб</a></li>
+    <li><a href="#team">команда</a></li>
+  </ul>
+  <a href="#calc" class="nav-cta">
+    <span class="nav-cta-dot"></span>
+    запустить
+  </a>
+  <button class="burger" id="burger" aria-label="меню">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#calc">калькулятор</a>
+  <a href="#docs">документация</a>
+  <a href="#specs">ядро</a>
+  <a href="#club">клуб</a>
+  <a href="#team">команда</a>
+</div>
+
+<section class="hero" id="top">
+  <div class="hero-top">
+    <span class="hero-top-dot"></span>
+    stuhl calc v4.2
+    <span class="hero-top-sep"></span>
+    клуб stuhl · vip it мшп
+  </div>
+
+  <h1>
+    наилучший<br>
+    <em>консольный</em><br>
+    <strong>калькулятор.</strong>
+  </h1>
+  <h2>(за всю историю МШП)</h2>
+  <div class="hero-bottom">
+    <p class="hero-desc">
+      продукт клуба stuhl внутри закрытого <strong>vip it сообщества</strong> московской школы программистов. 21 задание, 3 модуля, единая сборка. кураторы: годоборшев э.а., чернышков м.в.
+    </p>
+    <div class="hero-actions">
+      <a href="#calc" class="btn-solid">
+        запустить ядро
+        <span class="arr">→</span>
+      </a>
+      <a href="#docs" class="btn-ghost">
+        документация
+      </a>
+    </div>
+  </div>
+
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <div class="hero-stat-num">21<em>шт</em></div>
+      <div class="hero-stat-lbl">заданий</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-num">3<em>шт</em></div>
+      <div class="hero-stat-lbl">модуля</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-num">∞</div>
+      <div class="hero-stat-lbl">выражений</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-num">vip</div>
+      <div class="hero-stat-lbl">статус</div>
+    </div>
+  </div>
+</section>
+
+<div class="marquee">
+  <div class="marquee-track">
+    <span class="marquee-item">stuhlcore v4.2</span>
+    <span class="marquee-item">vip it сообщество</span>
+    <span class="marquee-item">московская школа программистов</span>
+    <span class="marquee-item">клуб stuhl</span>
+    <span class="marquee-item">elite build</span>
+    <span class="marquee-item">stuhlcore v4.2</span>
+    <span class="marquee-item">vip it сообщество</span>
+    <span class="marquee-item">московская школа программистов</span>
+    <span class="marquee-item">клуб stuhl</span>
+    <span class="marquee-item">elite build</span>
+  </div>
+</div>
+
+<section id="calc">
+  <div class="section-head reveal">
+    <div class="section-tag"><em>01</em> — ядро</div>
+    <div class="section-tag">stuhlcore v4.2</div>
+  </div>
+  <h2 class="reveal">интерактивная<br><em>консольная</em> сессия.</h2>
+  <p class="section-sub reveal">полноценная реализация продукта. введи menu и нажми enter.</p>
+
+  <div class="calc-shell reveal">
+    <div class="calc-bar">
+      <div class="calc-bar-left">
+        <div class="calc-dots">
+          <span class="calc-dot"></span>
+          <span class="calc-dot"></span>
+          <span class="calc-dot"></span>
+        </div>
+        <span class="calc-title">stuhl-calc — интерактивная сессия</span>
+      </div>
+      <div class="calc-status">
+        <span class="calc-status-dot"></span>
+        online
+      </div>
+    </div>
+    <div class="calc-body">
+      <div class="calc-console" id="console">
+        <div class="calc-input-wrap">
+          <span class="calc-input-prompt">&gt;&gt;&gt;</span>
+          <input type="text" class="calc-input" id="cmdInput" placeholder="введи команду…" autocomplete="off" spellcheck="false">
+        </div>
+      </div>
+      <div class="calc-side">
+        <div class="calc-side-group">
+          <div class="calc-side-label">быстрые команды</div>
+          <button class="cmd-btn" data-cmd="menu"><span class="cmd-bullet">◆</span> menu</button>
+          <button class="cmd-btn" data-cmd="menu_numbers"><span class="cmd-bullet">◆</span> menu_numbers</button>
+          <button class="cmd-btn" data-cmd="menu_strings"><span class="cmd-bullet">◆</span> menu_strings</button>
+          <button class="cmd-btn" data-cmd="menu_long"><span class="cmd-bullet">◆</span> menu_long</button>
+          <button class="cmd-btn" data-cmd="help"><span class="cmd-bullet">◆</span> help</button>
+          <button class="cmd-btn" data-cmd="clear"><span class="cmd-bullet">◆</span> clear</button>
+        </div>
+        <div class="calc-side-group">
+          <div class="calc-side-label">прямой вызов</div>
+          <button class="cmd-btn" data-cmd="calc_simple"><span class="cmd-bullet">▸</span> calc_simple()</button>
+          <button class="cmd-btn" data-cmd="calc_extended"><span class="cmd-bullet">▸</span> calc_extended()</button>
+          <button class="cmd-btn" data-cmd="calc_degrees"><span class="cmd-bullet">▸</span> calc_degrees()</button>
+          <button class="cmd-btn" data-cmd="calc_radians"><span class="cmd-bullet">▸</span> calc_radians()</button>
+          <button class="cmd-btn" data-cmd="calc_logic"><span class="cmd-bullet">▸</span> calc_logic()</button>
+          <button class="cmd-btn" data-cmd="menu_logic"><span class="cmd-bullet">▸</span> menu_logic()</button>
+          <button class="cmd-btn" data-cmd="check_brackets"><span class="cmd-bullet">▸</span> check_brackets()</button>
+          <button class="cmd-btn" data-cmd="str_simple"><span class="cmd-bullet">▸</span> str_simple()</button>
+          <button class="cmd-btn" data-cmd="str_showcenter"><span class="cmd-bullet">▸</span> str_showcenter()</button>
+          <button class="cmd-btn" data-cmd="str_words"><span class="cmd-bullet">▸</span> str_words()</button>
+          <button class="cmd-btn" data-cmd="str_stat"><span class="cmd-bullet">▸</span> str_stat()</button>
+          <button class="cmd-btn" data-cmd="long_add"><span class="cmd-bullet">▸</span> long_add()</button>
+          <button class="cmd-btn" data-cmd="long_sub"><span class="cmd-bullet">▸</span> long_sub()</button>
+          <button class="cmd-btn" data-cmd="long_multiply"><span class="cmd-bullet">▸</span> long_multiply()</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="docs">
+  <div class="section-head reveal">
+    <div class="section-tag"><em>02</em> — докс</div>
+    <div class="section-tag">21 задание · 3 модуля</div>
+  </div>
+  <h2 class="reveal">полная документация<br><em>продукта.</em></h2>
+  <p class="section-sub reveal">все задания и функции ядра stuhlcore v4.2.</p>
+
+  <div class="docs-row reveal">
+    <div class="doc-item">
+      <div class="doc-item-num">модуль 01</div>
+      <h3>калькулятор чисел</h3>
+      <p>простые и расширенные операции, тригонометрия, логика, системы счисления, проверка скобок.</p>
+      <code>menu_numbers()</code>
+    </div>
+    <div class="doc-item">
+      <div class="doc-item-num">модуль 02</div>
+      <h3>калькулятор строк</h3>
+      <p>простые операции со строками, центрирование, подсчёт слов, статистика символов.</p>
+      <code>menu_strings()</code>
+    </div>
+    <div class="doc-item">
+      <div class="doc-item-num">модуль 03</div>
+      <h3>длинная арифметика</h3>
+      <p>сложение, вычитание и умножение чисел произвольной длины по ручным алгоритмам.</p>
+      <code>menu_long()</code>
+    </div>
+  </div>
+
+  <div class="doc-details reveal">
+    <div class="doc-detail">
+      <div class="doc-detail-tag">01</div>
+      <div class="doc-detail-content">
+        <h4>простые действия</h4>
+        <p><code>calc_simple()</code> — ввод двух целых чисел и операции + − × ÷. деление на ноль перехватывается.</p>
+      </div>
+    </div>
+    <div class="doc-detail">
+      <div class="doc-detail-tag">02</div>
+      <div class="doc-detail-content">
+        <h4>расширенные действия</h4>
+        <p><code>calc_extended()</code> — возведение в степень, остаток от деления, нахождение корня. защита от отрицательного корня.</p>
+      </div>
+    </div>
+    <div class="doc-detail">
+      <div class="doc-detail-tag">03</div>
+      <div class="doc-detail-content">
+        <h4>тригонометрия · градусы</h4>
+        <p><code>calc_degrees()</code> — sin() и cos() в градусах.</p>
+      </div>
+    </div>
+    <div class="doc-detail">
+      <div class="doc-detail-tag">04</div>
+      <div class="doc-detail-content">
+        <h4>тригонометрия · радианы</h4>
+        <p><code>calc_radians()</code> — sin() и cos() в радианах.</p>
+      </div>
+    </div>
+    <div class="doc-detail">
+      <div class="doc-detail-tag">05</div>
+      <div class="doc-detail-content">
+        <h4>логические величины</h4>
+        <p><code>calc_logic()</code> — and, or, not. 0 = false, 1 = true.</p>
+      </div>
+    </div>
+    <div class="doc-detail">
+      <div class="doc-detail-tag">06–08</div>
+      <div class="doc-detail-content">
+        <h4>перевод чисел</h4>
+        <p><code>calc_10_2()</code>, <code>calc_10_16()</code>, <code>calc_10_8()</code> — перевод из 10СС в 2СС, 16СС, 8СС.</p>
+      </div>
+    </div>
+    <div class="doc-detail">
+      <div class="doc-detail-tag">09</div>
+      <div class="doc-detail-content">
+        <h4>меню перевода</h4>
+        <p><code>menu_logic()</code> — единое меню перевода чисел между системами счисления.</p>
+      </div>
+    </div>
+    <div class="doc-detail">
+      <div class="doc-detail-tag">10</div>
+      <div class="doc-detail-content">
+        <h4>проверка скобок</h4>
+        <p><code>check_brackets()</code> — проверка правильности расстановки фигурных скобок. вывод «ДА» или «НЕТ».</p>
+      </div>
+    </div>
+    <div class="doc-detail">
+      <div class="doc-detail-tag">11</div>
+      <div class="doc-detail-content">
+        <h4>меню чисел</h4>
+        <p><code>menu_numbers()</code> — главное меню числовых операций. объединяет пункты 1–7.</p>
+      </div>
+    </div>
+    <div class="doc-detail">
+      <div class="doc-detail-tag">12–15</div>
+      <div class="doc-detail-content">
+        <h4>калькулятор строк</h4>
+        <p><code>str_simple()</code>, <code>str_showcenter()</code>, <code>str_words()</code>, <code>str_stat()</code> — операции над строками и статистика.</p>
+      </div>
+    </div>
+    <div class="doc-detail">
+      <div class="doc-detail-tag">16</div>
+      <div class="doc-detail-content">
+        <h4>меню строк</h4>
+        <p><code>menu_strings()</code> — меню операций над строками.</p>
+      </div>
+    </div>
+    <div class="doc-detail">
+      <div class="doc-detail-tag">17–19</div>
+      <div class="doc-detail-content">
+        <h4>длинная арифметика</h4>
+        <p><code>long_add()</code>, <code>long_sub()</code>, <code>long_multiply()</code> — сложение, вычитание, умножение столбиком.</p>
+      </div>
+    </div>
+    <div class="doc-detail">
+      <div class="doc-detail-tag">20</div>
+      <div class="doc-detail-content">
+        <h4>меню длинной арифметики</h4>
+        <p><code>menu_long()</code> — меню длинной арифметики.</p>
+      </div>
+    </div>
+    <div class="doc-detail">
+      <div class="doc-detail-tag">21</div>
+      <div class="doc-detail-content">
+        <h4>общее меню · сборка</h4>
+        <p><code>menu()</code> — главное меню StuhlКалькулятора. точка входа всей программы.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="club">
+  <div class="section-head reveal">
+    <div class="section-tag"><em>03</em> — клуб</div>
+    <div class="section-tag">vip it сообщество мшп</div>
+  </div>
+  <h2 class="reveal">закрытое сообщество<br><em>внутри vip it.</em></h2>
+  <p class="section-sub reveal">stuhl — элитный клуб московской школы программистов. аналог гарвардских клубов, но для инженеров.</p>
+
+  <div class="club-grid reveal">
+    <div class="club-item">
+      <div class="club-item-num">01</div>
+      <h3>закрытое сообщество</h3>
+      <p>stuhl — элитный клуб внутри vip it сообщества мшп. только сильнейшие разработчики получают доступ к внутренним проектам.</p>
+      <ul>
+        <li>отбор по инженерному уровню</li>
+        <li>внутренние проекты и релизы</li>
+        <li>закрытые митапы и сессии</li>
+        <li>прямой доступ к кураторам</li>
+      </ul>
+    </div>
+    <div class="club-item">
+      <div class="club-item-num">02</div>
+      <h3>глобальная команда</h3>
+      <p>разработчики со всей экосистемы мшп объединились, чтобы создать эталонный консольный калькулятор.</p>
+      <ul>
+        <li>распределённая команда инженеров</li>
+        <li>code review каждой строки</li>
+        <li>промышленные стандарты качества</li>
+        <li>релизный цикл клуба</li>
+      </ul>
+    </div>
+    <div class="club-item">
+      <div class="club-item-num">03</div>
+      <h3>под надзором кураторов</h3>
+      <p>проект курируют годоборшев эльберд анзорович и чернышков максим викторович. стандарты — промышленные.</p>
+      <ul>
+        <li>экспертиза кураторов мшп</li>
+        <li>прямые архитектурные решения</li>
+        <li>контроль качества релизов</li>
+        <li>менторство участников клуба</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="specs">
+  <div class="section-head reveal">
+    <div class="section-tag"><em>04</em> — ядро</div>
+    <div class="section-tag">stuhlcore v4.2</div>
+  </div>
+  <h2 class="reveal">спецификация<br><em>ядра.</em></h2>
+  <p class="section-sub reveal">каждый модуль выверен до последней строки.</p>
+
+  <div class="spec-list reveal">
+    <div class="spec-row">
+      <div class="spec-row-key">движок</div>
+      <div class="spec-row-val"><strong>stuhlcore v4.2</strong> — модульный парсер команд с меню-навигацией</div>
+    </div>
+    <div class="spec-row">
+      <div class="spec-row-key">модули</div>
+      <div class="spec-row-val">числа · строки · длинная арифметика — <strong>21 задание</strong> в единой сборке</div>
+    </div>
+    <div class="spec-row">
+      <div class="spec-row-key">точность</div>
+      <div class="spec-row-val"><strong>длинная арифметика</strong> для чисел произвольной длины</div>
+    </div>
+    <div class="spec-row">
+      <div class="spec-row-key">операции</div>
+      <div class="spec-row-val">арифметика, тригонометрия, логика, системы счисления, строки</div>
+    </div>
+    <div class="spec-row">
+      <div class="spec-row-key">проверки</div>
+      <div class="spec-row-val">деление на ноль, отрицательный корень, <strong>корректность скобок</strong></div>
+    </div>
+    <div class="spec-row">
+      <div class="spec-row-key">интерфейс</div>
+      <div class="spec-row-val">консольное меню с навигацией по номерам пунктов</div>
+    </div>
+    <div class="spec-row">
+      <div class="spec-row-key">формат</div>
+      <div class="spec-row-val">python-совместимый синтаксис, отформатирован по pep8</div>
+    </div>
+    <div class="spec-row">
+      <div class="spec-row-key">платформа</div>
+      <div class="spec-row-val">кроссплатформенное консольное приложение · <strong>windows / linux / macos / web</strong></div>
+    </div>
+  </div>
+</section>
+
+<div class="manifest reveal">
+  <div class="manifest-label">// манифест продукта · версия 4.2</div>
+  <p class="manifest-text">
+    <strong>stuhlкалькулятор</strong> — инженерный инструмент нового поколения, рождённый внутри закрытого vip it сообщества московской школы программистов. клуб <strong>stuhl</strong> собрал лучших разработчиков, чтобы доказать: консольный калькулятор может быть <em>быстрее, точнее и мощнее</em> любого графического аналога. <strong>ноль компромиссов. ноль задержек. ноль ошибок.</strong>
+  </p>
+  <div class="manifest-sign">
+    <div class="manifest-sign-line"></div>
+    <div class="manifest-sign-text">клуб stuhl · vip it сообщество мшп · 2025</div>
+  </div>
+</div>
+
+<section id="team">
+  <div class="section-head reveal">
+    <div class="section-tag"><em>05</em> — команда</div>
+    <div class="section-tag">кураторы и разработчики</div>
+  </div>
+  <h2 class="reveal">люди за<br><em>продуктом.</em></h2>
+  <p class="section-sub reveal">проект курируют эксперты vip it сообщества мшп, реализуют — участники клуба.</p>
+
+  <div class="team-label reveal">// кураторы</div>
+  <div class="curators-list reveal">
+    <div class="curator-row">
+      <div class="curator-avatar">ГЭ</div>
+      <div class="curator-name">годоборшев эльберд анзорович</div>
+      <div class="curator-role">куратор клуба stuhl</div>
+    </div>
+    <div class="curator-row">
+      <div class="curator-avatar">ЧМ</div>
+      <div class="curator-name">чернышков максим викторович</div>
+      <div class="curator-role">куратор клуба stuhl</div>
+    </div>
+  </div>
+
+  <div class="team-label reveal">// наша команда</div>
+  <div class="team-list reveal">
+    <div class="team-row">
+      <div class="team-avatar">ОМ</div>
+      <div class="team-name">осипов матвей</div>
+      <div class="team-role">разработчик</div>
+    </div>
+    <div class="team-row">
+      <div class="team-avatar">ТМ</div>
+      <div class="team-name">тептин марк</div>
+      <div class="team-role">разработчик</div>
+    </div>
+    <div class="team-row">
+      <div class="team-avatar">ША</div>
+      <div class="team-name">шарикадзе александр</div>
+      <div class="team-role">разработчик</div>
+    </div>
+    <div class="team-row">
+      <div class="team-avatar">СА</div>
+      <div class="team-name">стескольников алексей</div>
+      <div class="team-role">разработчик</div>
+    </div>
+    <div class="team-row">
+      <div class="team-avatar">КС</div>
+      <div class="team-name">киселев святослав</div>
+      <div class="team-role">разработчик</div>
+    </div>
+    <div class="team-row">
+      <div class="team-avatar">ДМ</div>
+      <div class="team-name">давыдов максим</div>
+      <div class="team-role">разработчик</div>
+    </div>
+    <div class="team-row">
+      <div class="team-avatar">КН</div>
+      <div class="team-name">куранцев николай</div>
+      <div class="team-role">разработчик</div>
+    </div>
+    <div class="team-row">
+      <div class="team-avatar">ЗЕ</div>
+      <div class="team-name">земляков егор</div>
+      <div class="team-role">разработчик</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="#top" class="nav-logo">
+        <div class="nav-logo-mark">S</div>
+        <div class="nav-logo-text">stuhl<em>calc</em></div>
+      </a>
+      <p>наилучший консольный калькулятор. продукт клуба stuhl внутри vip it сообщества московской школы программистов.</p>
+    </div>
+    <div class="footer-col">
+      <h4>продукт</h4>
+      <a href="#calc">запустить ядро</a>
+      <a href="#docs">документация</a>
+      <a href="#specs">спецификация</a>
+      <a href="#club">клуб stuhl</a>
+    </div>
+    <div class="footer-col">
+      <h4>модули</h4>
+      <a href="#docs">калькулятор чисел</a>
+      <a href="#docs">калькулятор строк</a>
+      <a href="#docs">длинная арифметика</a>
+      <a href="#docs">общее меню</a>
+    </div>
+    <div class="footer-col">
+      <h4>команда</h4>
+      <a href="#team">кураторы</a>
+      <a href="#team">разработчики</a>
+      <a href="#club">vip it мшп</a>
+      <a href="#club">клуб stuhl</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 клуб stuhl · продукт vip it сообщества московской школы программистов</p>
+    <div class="footer-badge">
+      <span class="footer-badge-dot"></span>
+      stuhl club · elite build
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const consoleEl = document.getElementById('console');
+  const inputEl = document.getElementById('cmdInput');
+  const inputWrap = consoleEl.querySelector('.calc-input-wrap');
+  let state = null;
+
+  function scrollBottom(){ consoleEl.scrollTop = consoleEl.scrollHeight; }
+  function escapeHtml(s){ return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+
+  function printRich(html){
+    const div = document.createElement('div');
+    div.className = 'console-line';
+    div.innerHTML = html;
+    consoleEl.insertBefore(div, inputWrap);
+    scrollBottom();
+  }
+  function printPrompt(text){
+    printRich('<span class="cl-prompt">&gt;&gt;&gt;</span> <span class="cl-white">' + escapeHtml(text) + '</span>');
+  }
+  function clearConsole(){ consoleEl.querySelectorAll('.console-line').forEach(el => el.remove()); }
+  function ask(question, validator, onAnswer){
+    printRich('<span class="cl-accent">?</span> <span class="cl-white">' + escapeHtml(question) + '</span>');
+    state = { type: 'ask', validator, onAnswer };
+    inputEl.placeholder = 'ответ…';
+    inputEl.focus();
+  }
+  function askChoice(question, options, onAnswer){
+    printRich('<span class="cl-accent">?</span> <span class="cl-white">' + escapeHtml(question) + '</span>');
+    options.forEach(o => printRich('   <span class="cl-dim">' + o.num + '.</span> <span class="cl-white">' + escapeHtml(o.label) + '</span>'));
+    state = { type: 'ask', validator: v => {
+      const n = parseInt(v.trim());
+      if(isNaN(n) || n < 1 || n > options.length){
+        printRich('<span class="cl-err">✗ некорректный выбор. введи число от 1 до ' + options.length + '.</span>');
+        return false;
+      }
+      return true;
+    }, onAnswer: v => onAnswer(parseInt(v.trim())) };
+    inputEl.placeholder = 'номер…';
+    inputEl.focus();
+  }
+  function endState(){ state = null; inputEl.placeholder = 'введи команду…'; }
+  function num(v){ const n = Number(v); if(isNaN(n)){ printRich('<span class="cl-err">✗ это не число.</span>'); return null; } return n; }
+  function int(v){ const n = parseInt(v.trim()); if(isNaN(n)){ printRich('<span class="cl-err">✗ ожидается целое число.</span>'); return null; } return n; }
+
+  function calc_simple(){
+    printRich('<span class="cl-accent">◆</span> <span class="cl-white">calc_simple() — простые операции</span>');
+    ask('введите первое число:', v => int(v) !== null, v1 => {
+      const a = int(v1);
+      ask('введите второе число:', v => int(v) !== null, v2 => {
+        const b = int(v2);
+        ask('введите операцию (+, -, *, /):', v => ['+','-','*','/'].includes(v.trim()), op => {
+          op = op.trim();
+          let res;
+          if(op === '/'){
+            if(b === 0){ printRich('<span class="cl-err">✗ ошибка: деление на ноль!</span>'); endState(); return; }
+            res = a / b;
+          } else if(op === '+') res = a + b;
+          else if(op === '-') res = a - b;
+          else if(op === '*') res = a * b;
+          printRich('<span class="cl-ok">=</span> <span class="cl-white">' + res + '</span>');
+          endState();
+        });
+      });
+    });
+  }
+
+  function calc_extended(){
+    printRich('<span class="cl-accent">◆</span> <span class="cl-white">calc_extended() — расширенные операции</span>');
+    askChoice('выберите операцию:', [
+      {num:1, label:'возведение в степень'},
+      {num:2, label:'остаток от деления'},
+      {num:3, label:'нахождение корня'}
+    ], choice => {
+      if(choice === 3){
+        ask('введите число:', v => num(v) !== null, v => {
+          const n = num(v);
+          if(n < 0){ printRich('<span class="cl-err">✗ ошибка: корень из отрицательного числа.</span>'); endState(); return; }
+          printRich('<span class="cl-ok">=</span> <span class="cl-white">' + Math.sqrt(n) + '</span>');
+          endState();
+        });
+      } else {
+        ask('введите первое число:', v => num(v) !== null, v1 => {
+          const a = num(v1);
+          ask('введите второе число:', v => num(v) !== null, v2 => {
+            const b = num(v2);
+            if(choice === 1) printRich('<span class="cl-ok">=</span> <span class="cl-white">' + Math.pow(a, b) + '</span>');
+            else if(choice === 2){
+              if(b === 0){ printRich('<span class="cl-err">✗ ошибка: деление на ноль!</span>'); endState(); return; }
+              printRich('<span class="cl-ok">=</span> <span class="cl-white">' + (a % b) + '</span>');
+            }
+            endState();
+          });
+        });
+      }
+    });
+  }
+
+  function calc_degrees(){
+    printRich('<span class="cl-accent">◆</span> <span class="cl-white">calc_degrees() — тригонометрия (градусы)</span>');
+    askChoice('выберите функцию:', [{num:1, label:'sin()'}, {num:2, label:'cos()'}], choice => {
+      ask('введите угол в градусах:', v => num(v) !== null, v => {
+        const rad = num(v) * Math.PI / 180;
+        const res = choice === 1 ? Math.sin(rad) : Math.cos(rad);
+        printRich('<span class="cl-ok">=</span> <span class="cl-white">' + res + '</span>');
+        endState();
+      });
+    });
+  }
+
+  function calc_radians(){
+    printRich('<span class="cl-accent">◆</span> <span class="cl-white">calc_radians() — тригонометрия (радианы)</span>');
+    askChoice('выберите функцию:', [{num:1, label:'sin()'}, {num:2, label:'cos()'}], choice => {
+      ask('введите угол в радианах:', v => num(v) !== null, v => {
+        const angle = num(v);
+        const res = choice === 1 ? Math.sin(angle) : Math.cos(angle);
+        printRich('<span class="cl-ok">=</span> <span class="cl-white">' + res + '</span>');
+        endState();
+      });
+    });
+  }
+
+  function calc_logic(){
+    printRich('<span class="cl-accent">◆</span> <span class="cl-white">calc_logic() — логические операции</span>');
+    askChoice('выберите операцию:', [{num:1, label:'and'}, {num:2, label:'or'}, {num:3, label:'not'}], choice => {
+      if(choice === 3){
+        ask('введите значение (0 или 1):', v => ['0','1'].includes(v.trim()), v => {
+          const a = v.trim() === '1';
+          printRich('<span class="cl-ok">=</span> <span class="cl-white">' + (a ? 'false' : 'true') + '</span>');
+          endState();
+        });
+      } else {
+        ask('введите первое значение (0 или 1):', v => ['0','1'].includes(v.trim()), v1 => {
+          const a = v1.trim() === '1';
+          ask('введите второе значение (0 или 1):', v => ['0','1'].includes(v.trim()), v2 => {
+            const b = v2.trim() === '1';
+            const res = choice === 1 ? (a && b) : (a || b);
+            printRich('<span class="cl-ok">=</span> <span class="cl-white">' + (res ? 'true' : 'false') + '</span>');
+            endState();
+          });
+        });
+      }
+    });
+  }
+
+  function toBase(n, base){
+    if(n === 0) return '0';
+    const digits = '0123456789abcdef';
+    let res = '';
+    while(n > 0){ res = digits[n % base] + res; n = Math.floor(n / base); }
+    return res;
+  }
+
+  function calc_10_2(){ ask('введите число:', v => int(v) !== null && int(v) >= 0, v => { printRich('<span class="cl-ok">=</span> <span class="cl-white">' + toBase(int(v), 2) + '</span>'); endState(); }); }
+  function calc_10_16(){ ask('введите число:', v => int(v) !== null && int(v) >= 0, v => { printRich('<span class="cl-ok">=</span> <span class="cl-white">' + toBase(int(v), 16) + '</span>'); endState(); }); }
+  function calc_10_8(){ ask('введите число:', v => int(v) !== null && int(v) >= 0, v => { printRich('<span class="cl-ok">=</span> <span class="cl-white">' + toBase(int(v), 8) + '</span>'); endState(); }); }
+
+  function menu_logic(){
+    printRich('<span class="cl-accent">◆</span> <span class="cl-white">menu_logic() — меню перевода чисел</span>');
+    askChoice('выберите направление перевода:', [
+      {num:1, label:'10СС → 2СС'},
+      {num:2, label:'10СС → 16СС'},
+      {num:3, label:'10СС → 8СС'}
+    ], choice => {
+      if(choice === 1) calc_10_2();
+      else if(choice === 2) calc_10_16();
+      else calc_10_8();
+    });
+  }
+
+  function check_brackets(){
+    printRich('<span class="cl-accent">◆</span> <span class="cl-white">check_brackets() — проверка скобок</span>');
+    ask('введите строку с формулой:', () => true, v => {
+      let depth = 0, ok = true;
+      for(const ch of v){
+        if(ch === '(') depth++;
+        else if(ch === ')'){ depth--; if(depth < 0){ ok = false; break; } }
+      }
+      if(depth !== 0) ok = false;
+      printRich('<span class="cl-ok">=</span> <span class="cl-white">' + (ok ? 'да' : 'нет') + '</span>');
+      endState();
+    });
+  }
+
+  function str_simple(){
+    printRich('<span class="cl-accent">◆</span> <span class="cl-white">str_simple() — простые операции со строками</span>');
+    ask('введите строку с операцией (+ или *):', v => ['+','*'].includes(v.trim()), op => {
+      op = op.trim();
+      if(op === '+'){
+        ask('введите первую строку:', () => true, s1 => {
+          ask('введите вторую строку:', () => true, s2 => {
+            printRich('<span class="cl-ok">=</span> <span class="cl-white">' + escapeHtml(s1 + s2) + '</span>');
+            endState();
+          });
+        });
+      } else {
+        ask('введите строку:', () => true, s => {
+          ask('введите число:', v => int(v) !== null, v => {
+            printRich('<span class="cl-ok">=</span> <span class="cl-white">' + escapeHtml(s.repeat(int(v))) + '</span>');
+            endState();
+          });
+        });
+      }
+    });
+  }
+
+  function str_showcenter(){
+    printRich('<span class="cl-accent">◆</span> <span class="cl-white">str_showcenter() — центрирование строки</span>');
+    ask('введите строку:', () => true, s => {
+      const pad = Math.max(0, Math.floor((80 - s.length) / 2));
+      printRich('<span class="cl-ok">=</span> <span class="cl-white">[' + escapeHtml(' '.repeat(pad) + s) + ']</span>');
+      endState();
+    });
+  }
+
+  function str_words(){
+    printRich('<span class="cl-accent">◆</span> <span class="cl-white">str_words() — количество слов</span>');
+    ask('введите строку:', () => true, s => {
+      const words = s.trim().split(/\s+/).filter(Boolean);
+      const unique = new Set(words.map(w => w.toLowerCase()));
+      printRich('<span class="cl-ok">слов:</span> <span class="cl-white">' + words.length + '</span>');
+      printRich('<span class="cl-ok">уникальных:</span> <span class="cl-white">' + unique.size + '</span>');
+      endState();
+    });
+  }
+
+  function str_stat(){
+    printRich('<span class="cl-accent">◆</span> <span class="cl-white">str_stat() — статистика строки</span>');
+    ask('введите строку:', () => true, s => {
+      let digits = 0, upper = 0, lower = 0, spaces = 0;
+      for(const ch of s){
+        if(/\d/.test(ch)) digits++;
+        else if(/[A-ZА-ЯЁ]/.test(ch)) upper++;
+        else if(/[a-zа-яё]/.test(ch)) lower++;
+        else if(/\s/.test(ch)) spaces++;
+      }
+      printRich('<span class="cl-ok">длина:</span> <span class="cl-white">' + s.length + '</span>');
+      printRich('<span class="cl-ok">цифр:</span> <span class="cl-white">' + digits + '</span>');
+      printRich('<span class="cl-ok">верхний регистр:</span> <span class="cl-white">' + upper + '</span>');
+      printRich('<span class="cl-ok">нижний регистр:</span> <span class="cl-white">' + lower + '</span>');
+      printRich('<span class="cl-ok">пробельных:</span> <span class="cl-white">' + spaces + '</span>');
+      endState();
+    });
+  }
+
+  function longAdd(a, b){
+    let i = a.length - 1, j = b.length - 1, carry = 0;
+    const res = [];
+    while(i >= 0 || j >= 0 || carry){
+      const da = i >= 0 ? a.charCodeAt(i) - 48 : 0;
+      const db = j >= 0 ? b.charCodeAt(j) - 48 : 0;
+      const sum = da + db + carry;
+      res.push(sum % 10); carry = Math.floor(sum / 10);
+      i--; j--;
+    }
+    return res.reverse().join('');
+  }
+  function compareAbs(a, b){
+    if(a.length !== b.length) return a.length - b.length;
+    return a < b ? -1 : (a > b ? 1 : 0);
+  }
+  function longSub(a, b){
+    let i = a.length - 1, j = b.length - 1, borrow = 0;
+    const res = [];
+    while(i >= 0){
+      let da = a.charCodeAt(i) - 48 - borrow;
+      const db = j >= 0 ? b.charCodeAt(j) - 48 : 0;
+      if(da < db){ da += 10; borrow = 1; } else borrow = 0;
+      res.push(da - db); i--; j--;
+    }
+    while(res.length > 1 && res[res.length - 1] === 0) res.pop();
+    return res.reverse().join('');
+  }
+  function longMultiply(a, b){
+    const res = new Array(a.length + b.length).fill(0);
+    for(let i = a.length - 1; i >= 0; i--){
+      for(let j = b.length - 1; j >= 0; j--){
+        const mul = (a.charCodeAt(i) - 48) * (b.charCodeAt(j) - 48);
+        const p1 = i + j, p2 = i + j + 1;
+        const sum = mul + res[p2];
+        res[p2] = sum % 10;
+        res[p1] += Math.floor(sum / 10);
+      }
+    }
+    let start = 0;
+    while(start < res.length - 1 && res[start] === 0) start++;
+    return res.slice(start).join('');
+  }
+
+  function long_add(){
+    printRich('<span class="cl-accent">◆</span> <span class="cl-white">long_add() — сложение столбиком</span>');
+    ask('введите первое число:', v => /^\d+$/.test(v.trim()), v1 => {
+      ask('введите второе число:', v => /^\d+$/.test(v.trim()), v2 => {
+        printRich('<span class="cl-ok">=</span> <span class="cl-white">' + longAdd(v1.trim(), v2.trim()) + '</span>');
+        endState();
+      });
+    });
+  }
+  function long_sub(){
+    printRich('<span class="cl-accent">◆</span> <span class="cl-white">long_sub() — вычитание столбиком</span>');
+    ask('введите первое число:', v => /^\d+$/.test(v.trim()), v1 => {
+      ask('введите второе число:', v => /^\d+$/.test(v.trim()), v2 => {
+        const a = v1.trim(), b = v2.trim();
+        if(compareAbs(a, b) < 0){ printRich('<span class="cl-err">✗ ошибка: результат отрицательный.</span>'); endState(); return; }
+        printRich('<span class="cl-ok">=</span> <span class="cl-white">' + longSub(a, b) + '</span>');
+        endState();
+      });
+    });
+  }
+  function long_multiply(){
+    printRich('<span class="cl-accent">◆</span> <span class="cl-white">long_multiply() — умножение столбиком</span>');
+    ask('введите первое число:', v => /^\d+$/.test(v.trim()), v1 => {
+      ask('введите второе число:', v => /^\d+$/.test(v.trim()), v2 => {
+        printRich('<span class="cl-ok">=</span> <span class="cl-white">' + longMultiply(v1.trim(), v2.trim()) + '</span>');
+        endState();
+      });
+    });
+  }
+
+  function menu_long(){
+    printRich('<span class="cl-accent">◆</span> <span class="cl-white">menu_long() — меню длинной арифметики</span>');
+    askChoice('выберите операцию:', [
+      {num:1, label:'сложение'},
+      {num:2, label:'вычитание'},
+      {num:3, label:'умножение'}
+    ], choice => {
+      if(choice === 1) long_add();
+      else if(choice === 2) long_sub();
+      else long_multiply();
+    });
+  }
+
+  function menu_numbers(){
+    printRich('<span class="cl-accent">◆</span> <span class="cl-white">menu_numbers() — меню калькулятора чисел</span>');
+    askChoice('выберите пункт:', [
+      {num:1, label:'простые операции'},
+      {num:2, label:'расширенные операции'},
+      {num:3, label:'тригонометрия (градусы)'},
+      {num:4, label:'тригонометрия (радианы)'},
+      {num:5, label:'логические операции'},
+      {num:6, label:'перевод чисел в различные СС'},
+      {num:7, label:'проверка скобок'}
+    ], choice => {
+      if(choice === 1) calc_simple();
+      else if(choice === 2) calc_extended();
+      else if(choice === 3) calc_degrees();
+      else if(choice === 4) calc_radians();
+      else if(choice === 5) calc_logic();
+      else if(choice === 6) menu_logic();
+      else check_brackets();
+    });
+  }
+
+  function menu_strings(){
+    printRich('<span class="cl-accent">◆</span> <span class="cl-white">menu_strings() — меню калькулятора строк</span>');
+    askChoice('выберите пункт:', [
+      {num:1, label:'простые операции со строками'},
+      {num:2, label:'вывод строки по центру'},
+      {num:3, label:'количество слов и уникальных'},
+      {num:4, label:'статистика по символам'}
+    ], choice => {
+      if(choice === 1) str_simple();
+      else if(choice === 2) str_showcenter();
+      else if(choice === 3) str_words();
+      else str_stat();
+    });
+  }
+
+  function menu(){
+    printRich('<span class="cl-accent">◆</span> <span class="cl-white">menu() — общее меню StuhlКалькулятора</span>');
+    askChoice('выберите модуль:', [
+      {num:1, label:'калькулятор чисел'},
+      {num:2, label:'калькулятор строк'},
+      {num:3, label:'длинная арифметика'}
+    ], choice => {
+      if(choice === 1) menu_numbers();
+      else if(choice === 2) menu_strings();
+      else menu_long();
+    });
+  }
+
+  function help(){
+    printRich('<span class="cl-accent">◆</span> <span class="cl-white">help — справка stuhlcore v4.2</span>');
+    printRich('   <span class="cl-accent">menu</span> <span class="cl-dim">— общее меню</span>');
+    printRich('   <span class="cl-accent">menu_numbers</span> <span class="cl-dim">— меню чисел</span>');
+    printRich('   <span class="cl-accent">menu_strings</span> <span class="cl-dim">— меню строк</span>');
+    printRich('   <span class="cl-accent">menu_long</span> <span class="cl-dim">— длинная арифметика</span>');
+    printRich('   <span class="cl-accent">calc_simple, calc_extended, calc_degrees, calc_radians, calc_logic</span>');
+    printRich('   <span class="cl-accent">str_simple, str_showcenter, str_words, str_stat</span>');
+    printRich('   <span class="cl-accent">long_add, long_sub, long_multiply</span>');
+    printRich('   <span class="cl-accent">check_brackets, menu_logic</span>');
+    printRich('   <span class="cl-accent">help, clear</span> <span class="cl-dim">— сервисные</span>');
+  }
+
+  function handleCommand(cmd){
+    const c = cmd.trim();
+    if(!c) return;
+    printPrompt(c);
+    if(c === 'menu'){ menu(); return; }
+    if(c === 'menu_numbers'){ menu_numbers(); return; }
+    if(c === 'menu_strings'){ menu_strings(); return; }
+    if(c === 'menu_long'){ menu_long(); return; }
+    if(c === 'menu_logic'){ menu_logic(); return; }
+    if(c === 'calc_simple'){ calc_simple(); return; }
+    if(c === 'calc_extended'){ calc_extended(); return; }
+    if(c === 'calc_degrees'){ calc_degrees(); return; }
+    if(c === 'calc_radians'){ calc_radians(); return; }
+    if(c === 'calc_logic'){ calc_logic(); return; }
+    if(c === 'calc_10_2'){ calc_10_2(); return; }
+    if(c === 'calc_10_16'){ calc_10_16(); return; }
+    if(c === 'calc_10_8'){ calc_10_8(); return; }
+    if(c === 'check_brackets'){ check_brackets(); return; }
+    if(c === 'str_simple'){ str_simple(); return; }
+    if(c === 'str_showcenter'){ str_showcenter(); return; }
+    if(c === 'str_words'){ str_words(); return; }
+    if(c === 'str_stat'){ str_stat(); return; }
+    if(c === 'long_add'){ long_add(); return; }
+    if(c === 'long_sub'){ long_sub(); return; }
+    if(c === 'long_multiply'){ long_multiply(); return; }
+    if(c === 'help'){ help(); return; }
+    if(c === 'clear'){ clearConsole(); return; }
+    if(c === 'exit' || c === 'quit'){ printRich('<span class="cl-dim">сессия завершена.</span>'); return; }
+    printRich('<span class="cl-err">✗ неизвестная команда: ' + escapeHtml(c) + '</span>');
+    printRich('<span class="cl-dim">набери help для списка команд.</span>');
+  }
+
+  inputEl.addEventListener('keydown', e => {
+    if(e.key !== 'Enter') return;
+    const val = inputEl.value;
+    inputEl.value = '';
+    if(state && state.type === 'ask'){
+      if(!state.validator(val)) return;
+      const cb = state.onAnswer;
+      state = null;
+      cb(val);
+    } else {
+      handleCommand(val);
+    }
+    inputEl.placeholder = state ? 'ответ…' : 'введи команду…';
+    inputEl.focus();
+  });
+
+  document.querySelectorAll('.cmd-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      if(state){
+        printRich('<span class="cl-dim">[i] сначала заверши текущий диалог.</span>');
+        inputEl.focus();
+        return;
+      }
+      const cmd = btn.dataset.cmd;
+      inputEl.value = '';
+      handleCommand(cmd);
+      inputEl.focus();
+    });
+  });
+
+  printRich('<span class="cl-ok">[ok]</span> <span class="cl-white">ядро stuhlcore v4.2 инициализировано.</span>');
+  printRich('<span class="cl-dim">[i] клуб stuhl · vip it сообщество мшп</span>');
+  printRich('<span class="cl-dim">[i] кураторы: годоборшев э.а. · чернышков м.в.</span>');
+  printRich('<span class="cl-accent">◆</span> <span class="cl-white">добро пожаловать в stuhlкалькулятор.</span>');
+  printRich('<span class="cl-dim">набери</span> <span class="cl-accent">menu</span> <span class="cl-dim">для запуска или</span> <span class="cl-accent">help</span> <span class="cl-dim">для списка команд.</span>');
+  printRich('');
+  inputEl.focus();
+
+  document.querySelectorAll('.mobile-menu a').forEach(a => {
+    a.addEventListener('click', () => document.getElementById('mobileMenu').classList.remove('open'));
+  });
+  const burger = document.getElementById('burger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  if(burger) burger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    if(window.scrollY > 20) nav.classList.add('scrolled');
+    else nav.classList.remove('scrolled');
+  });
+
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+})();
+</script>
+</body>
+</html>
